@@ -2,7 +2,13 @@
 
 	require 'db.inc.php';
 	
+
 	$osztaly=array();
+
+
+
+
+$tanulo->list;
 
 	$sql = "SELECT * FROM `5/13ice`";
 	$result = $conn->query($sql);

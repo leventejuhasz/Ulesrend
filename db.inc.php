@@ -1,15 +1,17 @@
 <?php
 
-	$servername = "localhost";
-	$username = "php";
-	$password = "Nq8re1yu3mWXfPTe";
-	$dbname = "ulesrend";
+$servername = "localhost";
+$username = "phpteszt";
+$password = "dirW._/5d8pILDkk";
+$dbname = "teszt";
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-	// Check connection
-	if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-	}
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+// echo "Connected successfully";
+
 ?>
