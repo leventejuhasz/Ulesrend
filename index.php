@@ -1,58 +1,52 @@
-
-<html>
-
-
-</html>
 <?php
 
 session_start();
 
-$title = "Főoldal";
-include 'htmlheader.inc.php';
-
-require 'db.inc.php';
+require 'includes/db.inc.php';
 require 'model/Ulesrend.php';
 $tanulo = new Ulesrend;
-require 'functions.inc.php';
+require 'includes/functions.inc.php';
 
-include 'htmlheader.inc.php';
+// default oldal
+$page = 'index';
+
+// kilépés végrehajtása
+if(!empty($_REQUEST['action'])) {
+	if($_REQUEST['action'] == 'kilepes') session_unset();
+}
+
+// ki vagy be vagyok lépve?
+if(!empty($_SESSION["id"])) {
+        $szoveg = $_SESSION["nev"].": Kilépés";
+        $action = "kilepes";
+}
+else {
+        $szoveg = "Belépés";
+        $action = "belepes";        
+} 
+
+// router
+if(isset($_REQUEST['page'])) {
+        if(file_exists('controller/'.$_REQUEST['page'].'.php')) {
+                $page = $_REQUEST['page']; 
+        }
+}
+
+$menupontok = array(    'index' => "Főoldal", 
+                        'ulesrend' => "Ülésrend", 
+                        'felhasznalo' => $szoveg
+                );
+
+$title = $menupontok[$page];
+
+include 'includes/htmlheader.inc.php';
 ?>
-
 <body>
-        
-
 <?php
 
-$page ='index';
-
-
-
-if(isset($_REQUEST['page'])){
-
-
-if(file_exists('controller/'.$_REQUEST['page'].'.php')){
-
-
-$page = $_REQUEST['page'];
-
-}
-
-
-}
-include 'controller/'.$page.' .php';
-
-
-
+include 'includes/menu.inc.php';
+include 'controller/'.$page.'.php';
 
 ?>
-
 </body>
-
-
-
-
-
-
-
-
-?>
+</html>

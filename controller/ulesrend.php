@@ -1,7 +1,4 @@
 <?php
-
-
-
 // form feldolgozása
 
 if(!empty($_POST["hianyzo_id"])) {
@@ -31,6 +28,6 @@ if(!empty($_SESSION["id"])) $en = $_SESSION["id"];
 
 $tanar = 17;
 
-$title = "Ülésrend";
+$tanuloIdk = $tanulo->tanulokListaja($conn);
 
-?>
+include 'view/ulesrend.php';
