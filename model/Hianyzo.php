@@ -9,4 +9,21 @@ class Hianyzo extends Kijeloltfelhasznalok {
     }
 }
 
+
+//remove_id metódus elkészítése
+
+
+
+
+
+function remove_id($id){
+
+    $lista = array();
+    
+
+    unset(lista($id));
+    return $lista;
+}
+
+
 ?>
