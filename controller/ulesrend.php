@@ -26,3 +26,8 @@ $tanar = 17;
 $tanuloIdk = $tanulo->tanulokListaja($conn);
 
 include 'view/ulesrend.php';
+
+?>
+
+
+

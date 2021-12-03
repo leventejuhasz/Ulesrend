@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $username = "phpteszt";
-$password = "dirW._/5d8pILDkk";
-$dbname = "teszt";
+$password = "123456";
+$dbname = "ulesrend";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
